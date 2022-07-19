@@ -19,7 +19,7 @@
 #include "async_grpc/proto/math_service.pb.h"
 #include "async_grpc/retry.h"
 #include "glog/logging.h"
-#include "grpc++/grpc++.h"
+#include "grpcpp/grpcpp.h"
 #include "gtest/gtest.h"
 
 namespace async_grpc {

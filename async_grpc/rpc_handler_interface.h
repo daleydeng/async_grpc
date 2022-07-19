@@ -21,7 +21,7 @@
 #include "async_grpc/execution_context.h"
 #include "async_grpc/span.h"
 #include "google/protobuf/message.h"
-#include "grpc++/grpc++.h"
+#include "grpcpp/grpcpp.h"
 
 namespace async_grpc {
 

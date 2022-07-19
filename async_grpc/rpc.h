@@ -26,11 +26,11 @@
 #include "async_grpc/execution_context.h"
 #include "async_grpc/rpc_handler_interface.h"
 #include "google/protobuf/message.h"
-#include "grpc++/grpc++.h"
-#include "grpc++/impl/codegen/async_stream.h"
-#include "grpc++/impl/codegen/async_unary_call.h"
-#include "grpc++/impl/codegen/proto_utils.h"
-#include "grpc++/impl/codegen/service_type.h"
+#include "grpcpp/grpcpp.h"
+#include "grpcpp/impl/codegen/async_stream.h"
+#include "grpcpp/impl/codegen/async_unary_call.h"
+#include "grpcpp/impl/codegen/proto_utils.h"
+#include "grpcpp/impl/codegen/service_type.h"
 
 namespace async_grpc {
 

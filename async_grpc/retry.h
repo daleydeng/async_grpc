@@ -21,7 +21,7 @@
 
 #include "async_grpc/common/optional.h"
 #include "async_grpc/common/time.h"
-#include "grpc++/grpc++.h"
+#include "grpcpp/grpcpp.h"
 
 namespace async_grpc {
 

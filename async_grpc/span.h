@@ -19,7 +19,7 @@
 
 #include <memory>
 
-#include "grpc++/grpc++.h"
+#include "grpcpp/grpcpp.h"
 
 namespace async_grpc {
 

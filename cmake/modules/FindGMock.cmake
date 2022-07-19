@@ -63,7 +63,7 @@ endif()
 
 # System-wide installed gmock library might require pthreads.
 find_package(Threads REQUIRED)
-list(APPEND GMOCK_LIBRARIES ${CMAKE_THREAD_LIBS_INIT})
+list(APPEND GMOCK_LIBRARIES ${CMAKE_THREAD_LIBS_INIT} gtest)
 
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(GMock DEFAULT_MSG GMOCK_LIBRARIES

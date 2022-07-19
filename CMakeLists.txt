@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-cmake_minimum_required(VERSION 2.8.12)  # Ships with Ubuntu 14.04 (Trusty)
+cmake_minimum_required(VERSION 3.12)  # Ships with Ubuntu 14.04 (Trusty)
 
 project(async_grpc)
 
@@ -26,6 +26,7 @@ include("${PROJECT_SOURCE_DIR}/cmake/functions.cmake")
 google_initialize_async_grpc_project()
 enable_testing()
 find_package(GMock REQUIRED)
+find_package(gRPC REQUIRED)
 find_package(Protobuf 3.0.0 REQUIRED)
 
 set(ALL_LIBRARY_HDRS
@@ -102,7 +103,7 @@ foreach(RELATIVEPATH ${ALL_TESTS})
   string(REPLACE "/" "." TEST_TARGET_NAME "${DIR}/${FILENAME}")
   google_test("${TEST_TARGET_NAME}" ${RELATIVEPATH})
   target_link_libraries(${TEST_TARGET_NAME} PUBLIC ${GMOCK_LIBRARY})
-  target_link_libraries("${TEST_TARGET_NAME}" PUBLIC grpc++)
+  target_link_libraries("${TEST_TARGET_NAME}" PUBLIC gRPC::grpc++)
 endforeach()
 
 target_link_libraries(${PROJECT_NAME} PUBLIC glog)
@@ -115,7 +116,7 @@ target_include_directories(${PROJECT_NAME} SYSTEM PUBLIC
 target_link_libraries(${PROJECT_NAME} PUBLIC ${PROTOBUF_LIBRARY} pthread)
 
 # TODO(cschuet): Write FindGRPC.cmake
-target_link_libraries(${PROJECT_NAME} PUBLIC grpc++)
+target_link_libraries(${PROJECT_NAME} PUBLIC gRPC::grpc++)
 
 target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}>

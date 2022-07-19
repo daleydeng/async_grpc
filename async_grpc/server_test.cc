@@ -28,7 +28,7 @@
 #include "async_grpc/rpc_handler.h"
 #include "glog/logging.h"
 #include "google/protobuf/descriptor.h"
-#include "grpc++/grpc++.h"
+#include "grpcpp/grpcpp.h"
 #include "gtest/gtest.h"
 
 namespace async_grpc {

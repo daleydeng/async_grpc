@@ -22,7 +22,7 @@
 #include <vector>
 
 #include "common/mutex.h"
-#include "grpc++/grpc++.h"
+#include "grpcpp/grpcpp.h"
 
 namespace async_grpc {
 
@@ -41,7 +41,9 @@ class CompletionQueue {
 
  public:
   CompletionQueue() = default;
-
+  // bad hack, make vector<CompletionQueue>.resize() work
+  CompletionQueue(const CompletionQueue &other): CompletionQueue() {
+  }
   void Start();
   void Shutdown();
 
